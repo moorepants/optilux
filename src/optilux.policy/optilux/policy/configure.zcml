@@ -12,5 +12,13 @@
       description="Installs the optilux.policy package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
+
+  <genericsetup:importStep
+      name="optilux-various"
+      title="Additional Optilux site policy setup"
+      description="Optilux site policy configuration"
+      handler="optilux.policy.setuphandlers.importVarious">
+    <depends name="rolemap"/>
+  </genericsetup:importStep>
+
 </configure>
