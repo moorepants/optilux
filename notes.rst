@@ -36,31 +36,42 @@ Create a buildout.cfg::
 Setup a spot in your home directory where you can use buildout junk for all
 your plone sites::
 
-   (plone-python)$ mkdir ~/.buildout
-   (plone-python)$ vim ~/.buildout/default.cfg
-   (plone-python)$ mkdir /home/moorepants/.buildout/eggs
-   (plone-python)$ mkdir /home/moorepants/.buildout/extends
-   (plone-python)$ mkdir /home/moorepants/.buildout/downloads
+  (plone-python)$ mkdir ~/.buildout
+  (plone-python)$ vim ~/.buildout/default.cfg
+  (plone-python)$ mkdir /home/moorepants/.buildout/eggs
+  (plone-python)$ mkdir /home/moorepants/.buildout/extends
+  (plone-python)$ mkdir /home/moorepants/.buildout/downloads
 
 The default.cfg file should look like::
 
-   [buildout]
-   eggs-directory = /home/moorepants/.buildout/eggs
-   download-cache = /home/moorepants/.buildout/downloads
-   extends-cache = /home/moorepants/.buildout/extends
+  [buildout]
+  eggs-directory = /home/moorepants/.buildout/eggs
+  download-cache = /home/moorepants/.buildout/downloads
+  extends-cache = /home/moorepants/.buildout/extends
 
 Now download and install plone/zope with buildout::
 
-   (plone-python)$ bin/buildout
+  (plone-python)$ bin/buildout
 
 Buildout failed because I was missing these::
 
-   (plone-python)$ sudo aptitude install libxml2-dev libxslt-dev
+  (plone-python)$ sudo aptitude install libxml2-dev libxslt-dev
 
 Get cython too for the xml python pacakge speedups::
 
-   (plone-python)$ pip install cython
+  (plone-python)$ pip install cython
 
 Now buildout works::
 
-   (plone-python)$ bin/buildout
+  (plone-python)$ bin/buildout
+
+Create a package. Ideally this should be under its on git repo but for this it
+will be monolithic::
+
+  (plone-python)$ cd src
+  (plone-python)$ ../bin/zopeskel plone optilux.policy
+
+Edit the setup.py, configure.zcml, packages.cfg, and buildout.cfg
+
+bin/buildout
+bin/zopepy

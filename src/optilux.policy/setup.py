@@ -11,13 +11,13 @@ setup(name='optilux.policy',
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
-        "Framework :: Plone",
-        "Programming Language :: Python",
-        ],
+          "Framework :: Plone",
+          "Programming Language :: Python",
+      ],
       keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      author='Jason Moore',
+      author_email='moorepants@gmail.com',
+      url='http://optilux.moorepants.info',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['optilux'],
@@ -25,14 +25,17 @@ setup(name='optilux.policy',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
+          'Plone',
       ],
+      extras_require={
+          'test': ['plone.app.testing', ]
+      },
       entry_points="""
       # -*- Entry points: -*-
 
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
+      #setup_requires=["PasteScript"],
+      #paster_plugins=["ZopeSkel"],
       )
