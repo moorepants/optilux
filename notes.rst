@@ -75,3 +75,9 @@ Edit the setup.py, configure.zcml, packages.cfg, and buildout.cfg
 
 bin/buildout
 bin/zopepy
+
+>>> from optilux import policy
+
+Write tests: tests.py, testing.py
+
+bin/test -s optilux.policy
