@@ -15,8 +15,8 @@ setup(name='optilux.theme',
         "Programming Language :: Python",
         ],
       keywords='',
-      author='',
-      author_email='',
+      author='Jason Moore',
+      author_email='moorepants@gmail.com',
       url='http://svn.plone.org/svn/collective/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
@@ -25,14 +25,19 @@ setup(name='optilux.theme',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Plone',
+          #'plone.app.theming',
           # -*- Extra requirements: -*-
       ],
+      extras_require={
+          'test': ['plone.app.testing', ]
+      },
       entry_points="""
       # -*- Entry points: -*-
 
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
+      #setup_requires=["PasteScript"],
+      #paster_plugins=["ZopeSkel"],
       )

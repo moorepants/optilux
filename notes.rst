@@ -81,3 +81,7 @@ bin/zopepy
 Write tests: tests.py, testing.py
 
 bin/test -s optilux.policy
+
+On page 153 I hit this error and the solution here worked:
+http://keeshink.blogspot.com/2010/01/error-couldnt-find-index-page-for.html
+They should have told you to add it to autocheckout in buildout.cfg

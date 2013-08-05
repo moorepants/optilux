@@ -1,19 +1,24 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="optilux.theme">
+<configure>
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="optilux.theme">
 
-  <five:registerPackage package="." initialize=".initialize" />
+  <includeDependencies package="." />
+
+  <plone:static
+    directory="resources"
+    type="theme"
+  />
 
   <genericsetup:registerProfile
-      name="default"
-      title="optilux.theme"
-      directory="profiles/default"
-      description="Installs the optilux.theme package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-  <!-- -*- extra stuff goes here -*- -->
-  
+    name="default"
+    title="Optilux Theme"
+    directory="profiles/default"
+    description='Extension profile for the "Optilux" Plone theme.'
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+  />
+
 </configure>
