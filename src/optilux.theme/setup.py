@@ -5,7 +5,7 @@ version = '1.0'
 
 setup(name='optilux.theme',
       version=version,
-      description="",
+      description="Theme for the Optilux website",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
@@ -17,7 +17,7 @@ setup(name='optilux.theme',
       keywords='',
       author='Jason Moore',
       author_email='moorepants@gmail.com',
-      url='http://svn.plone.org/svn/collective/',
+      url='http://github.com/moorepants/optilux',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['optilux'],
@@ -27,6 +27,7 @@ setup(name='optilux.theme',
           'setuptools',
           'Plone',
           'plone.app.theming',
+          'plone.app.themingplugins',
       ],
       extras_require={
           'test': ['plone.app.testing', ]
@@ -37,6 +38,6 @@ setup(name='optilux.theme',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      #setup_requires=["PasteScript"],
-      #paster_plugins=["ZopeSkel"],
+      ###setup_requires=["PasteScript"],
+      ###paster_plugins=["ZopeSkel"],
       )
